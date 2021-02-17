@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev ": "parcel serve ./src/index.html",
-    "build": "parcel build ./src/index.html",
+    "build": "echo \" 🏗️   Starting Build Process \n 🩺  First Testing Build... \" && node tests/*.js && echo \" ✔️   All the Test Have Passed!\" && echo \"Removing Previous Build Directory🗑️\" && rm -ri dist && echo \" 👷      Executing Build Process\"  && parcel build ./src/index.html --experimental-scope-hoisting",
     "security": "snyk test --dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/*.js && echo \"All the Test Have Passed!\"✔️"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.20.0",
     "eslint-plugin-react": "^7.22.0",
