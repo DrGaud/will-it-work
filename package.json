@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev ": "parcel serve ./src/index.html",
-    "build": "echo \" 🏗️   Starting Build Process \n 🩺  First Testing Build... \" && node tests/*.js && echo \" ✔️   All the Test Have Passed!\" && echo \"Removing Previous Build Directory🗑️\" && rm -ri dist && echo \" 👷      Executing Build Process\"  && parcel build ./src/index.html --experimental-scope-hoisting",
+
+    "prebuild":"echo \" 🏗️   1) Starting Build Process \n 🩺   2) Testing Build... \" && node tests/*.js && echo \" ❗❗  3) All the Test Have Passed! ✔️ \" && echo \"🚮 Removing Previous Build Directory ....📂-->🗑️\" && rm -rf dist",
+
+    "build": "echo \"👷   Executing Build Process\"  && parcel build ./src/index.html --experimental-scope-hoisting",
+    
     "security": "snyk test --dev",
     "test": "node tests/*.js && echo \"All the Test Have Passed!\"✔️"
   },
